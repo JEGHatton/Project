@@ -20,9 +20,8 @@
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                     <div class="payment-checkout">
-                        <div class="title"> ID={{$checkoutId}}</div>
                         <script src="https://test.oppwa.com/v1/paymentWidgets.js?checkoutId={{$checkoutId}}"></script>
-                        <form action="/result" class="paymentWidgets" data-brands="VISA MASTER AMEX"></form>
+                        <form action="http://fyp.test/result/" class="paymentWidgets" data-brands="VISA MASTER AMEX" method="get"></form>
                     </div>
                 </div>
             </div>

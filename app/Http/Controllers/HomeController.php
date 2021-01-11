@@ -54,7 +54,7 @@ class HomeController extends Controller
         $temp = '';
         $responseData = $this->generateTransactionID();
         $checkoutId = $temp.substr($responseData,262, 46);
-        $url = "https://test.oppwa.com/v1/checkouts/{{$checkoutId}}/payment";
+        $url = "/v1/checkouts/{{$checkoutId}}/payment";
         $url .= "?entityId=8ac7a4ca759cd78501759dd759ad02df";
 
         $ch = curl_init();
@@ -69,7 +69,7 @@ class HomeController extends Controller
             return curl_error($ch);
         }
         curl_close($ch);
-        return $responseData;
+        return view ('result')->with('responseData',$responseData);
     }
 
     public function store($transaction) {
